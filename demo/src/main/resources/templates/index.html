@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Homepage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+</head>
+<body>
+
+<main >
+    <div >
+        <h1>Homepage</h1>
+        <div id="chartPlaceHolder"></div>
+        <button hx-post="/furtherInfo"
+                hx-trigger="click"
+                hx-target="#chartPlaceHolder"
+                hx-swap="outerHTML">Change greeting</button>
+    </div>
+</main>
+</body>
+</html>
