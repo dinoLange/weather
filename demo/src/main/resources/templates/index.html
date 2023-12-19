@@ -2,22 +2,31 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Homepage</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="https://unpkg.com/htmx.org@1.9.9"
+            integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX"
+            crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 </head>
 <body>
 
-<main >
-    <div >
-        <h1>Homepage</h1>
-        <div id="chartPlaceHolder"></div>
-        <button hx-post="/furtherInfo"
+<main>
+    <h1>Homepage</h1>
+    <div>
+        <div id="pieChartPlaceHolder"></div>
+        <button hx-post="/pieChart"
                 hx-trigger="click"
-                hx-target="#chartPlaceHolder"
-                hx-swap="outerHTML">Change greeting</button>
+                hx-target="#pieChartPlaceHolder"
+                hx-swap="outerHTML">Show pie chart</button>
+    </div>
+    <div>
+        <div id="lineChartPlaceHolder"></div>
+        <button hx-post="/lineChart"
+                hx-trigger="click"
+                hx-target="#lineChartPlaceHolder"
+                hx-swap="outerHTML">Show line chart</button>
     </div>
 </main>
 </body>

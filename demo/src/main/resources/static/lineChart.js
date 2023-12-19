@@ -1,4 +1,4 @@
-class PieChart extends HTMLElement {
+class LineChart extends HTMLElement {
   // The browser calls this method when the element is
   // added to the DOM.
 
@@ -46,13 +46,11 @@ class PieChart extends HTMLElement {
       // Create the data table.
 
       var data = new google.visualization.DataTable();
-
       var columnArray = columns.split(",")
       for(let index in columnArray) {
         data.addColumn(columnArray[index].split(":")[0].trim(), columnArray[index].split(":")[1].trim())
       }
       data.addRows(rows);
-
       if (!title) {
         title = 'Default title'
       }
@@ -62,17 +60,18 @@ class PieChart extends HTMLElement {
       if (!height) {
         height = '300'
       }
-    const options = {
-        title: title,
-        width: width,
-        height: height
-    }
-      var chart = new google.visualization.PieChart(element);
-      chart.draw(data, options);
+      const options = {
+          title: title,
+          width: width,
+          height: height
+      }
+
+        var chart = new google.visualization.LineChart(element);
+        chart.draw(data, options);
     }
 
   }
 }
 
 // Register the CurrentDate component using the tag name <current-date>.
-customElements.define('pie-chart', PieChart);
+customElements.define('line-chart', LineChart);
